@@ -1,0 +1,18 @@
+{
+  "name": "projeto-final-modulo4",
+  "version": "1.0.0",
+  "description": "Projeto Final Modulo 4 - API livraria",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node ./src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Priscila Rossetto",
+  "license": "ISC",
+  "dependencies": {
+    "3": "^2.1.0",
+    "express": "^4.17.3",
+    "sequelize": "^6.17.0",
+    "sqlite3": "^5.0.2"
+  }
+}
