@@ -15,6 +15,11 @@ app.use(clientRoute);
 
 //app.use(backRoute);
 
+app.get('/cliente', (req,res) => { res
+    .status(200)
+    .send({ mensagem: 'Boas-vindas à API'})
+});
+
 app.listen(port, () => {
-    console.log(`Servidor rodando na porta ${port}`);
-})
+    console.log(`Servidor rodando na porta ${port}`)
+});

@@ -18,12 +18,20 @@ Client.init({
         type: DataTypes.STRING
     },
 
+    cpf: {
+        type: DataTypes.INTEGER
+    },
+
     email: {
         type: DataTypes.STRING
     },
 
     endereco: {
         type: DataTypes.STRING
+    },
+
+    telefone: {
+        type: DataTypes.INTEGER
     }
 }, {
     sequelize,
