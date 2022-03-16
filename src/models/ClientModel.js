@@ -1,13 +1,12 @@
-const {Model, DataTypes} = require("sequelize");
+const { Model, DataTypes } = require("sequelize");
 
 const sequelize = require("../config/database");
 
 class Client extends Model {}
 
-Client.init(
-    {
+Client.init({
     id: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         primaryKey : true
     },
 
@@ -34,12 +33,11 @@ Client.init(
     telefone: {
         type: DataTypes.INTEGER,
     },
-},
-{
+},{
     sequelize,
     modelName: "client",
     timestamps: false
-}
+    }
 );
 
 module.exports = Client;
