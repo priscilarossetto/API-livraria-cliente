@@ -1,14 +1,13 @@
 const Client = require("../models/clientModel");
 
-const {request, response} = require ("express")
-
 module.exports = {
     async all(request, response) {
         try {
             const client = await Client.findAll();
-            response.status(200).json(Client)
+            response.status(200).json(client);
         } catch (error){
-            response.status(400).json(error.message)
+            console.log(error);
+            response.status(400).json(error);
         }
     }
 }

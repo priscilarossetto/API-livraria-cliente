@@ -1,42 +1,45 @@
 const {Model, DataTypes} = require("sequelize");
 
-const sequelize = require("../database");
+const sequelize = require("../config/database");
 
 class Client extends Model {}
 
-Client.init({
+Client.init(
+    {
     id: {
         type: DataTypes.STRING,
         primaryKey : true
     },
 
     nome: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
     },
 
     sobrenome: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
     },
 
     cpf: {
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER,
     },
 
     email: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
     },
 
     endereco: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
     },
 
     telefone: {
-        type: DataTypes.INTEGER
-    }
-}, {
+        type: DataTypes.INTEGER,
+    },
+},
+{
     sequelize,
     modelName: "client",
     timestamps: false
-})
+}
+);
 
 module.exports = Client;
