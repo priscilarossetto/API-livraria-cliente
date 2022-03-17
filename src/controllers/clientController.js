@@ -45,7 +45,6 @@ module.exports = {
                 return response.status(400).json("Cliente não localizado!");
             }
 
-            client.id = id;
             client.nome = nome;
             client.sobrenome = sobrenome;
             client.cpf = cpf;
