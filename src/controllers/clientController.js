@@ -59,6 +59,7 @@ module.exports = {
             response.status(400).send(error);
         }
     },
+    
     async delete(request, response) {
         try {
             const id = request.params.id;
