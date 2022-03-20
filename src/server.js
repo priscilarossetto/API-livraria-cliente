@@ -1,6 +1,6 @@
 const express = require("express");
 const sequelize = require("./config/database");
-const clientRoute = require ("./routes/client.routes");
+const clientRoute = require("./routes/client.routes");
 
 const port = 3000;
 const app = express();

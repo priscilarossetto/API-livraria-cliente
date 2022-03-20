@@ -10,7 +10,14 @@ module.exports = {
             response.status(400).json(error);
         }
     },
-
+    async create(request, response) {
+        try {
+            await Client.create(request.body);
+            response.status(200).json("Cliente inserido com sucesso!");
+        } catch (error) {
+            response.status(400).send(error);
+        }
+    },
     async one(request, response) {
         try {
             const id = request.params.id;
@@ -24,27 +31,15 @@ module.exports = {
             response.status(400).send(error);
         }
     },
-
-    async create(request, response) {
-        try {
-            await Client.create(request.body);
-            response.status(200).json("Cliente inserido com sucesso!");
-        } catch (error) {
-            response.status(400).send(error);
-        }
-    },
-
     async update(request, response) {
         try {
             const {nome, sobrenome, cpf, email, endereco, telefone} = request.body;
-            const id = request.params.id
-
+            const id = request.params.id;
             const client = await Client.findOne({where:{id}});
 
             if(!client) {
                 return response.status(400).json("Cliente não localizado!");
             }
-
             client.nome = nome;
             client.sobrenome = sobrenome;
             client.cpf = cpf;
@@ -54,17 +49,14 @@ module.exports = {
 
             await client.save();
             response.status(201).json("Cliente atualizado!");
-            
         } catch (error) {
             response.status(400).send(error);
         }
     },
-    
     async delete(request, response) {
         try {
             const id = request.params.id;
             const client = await Client.destroy({where: {id}});
-
             if(!client) {
                 return response.status(400).json("Cliente não encontrado!");
             }
